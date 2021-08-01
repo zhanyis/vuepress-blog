@@ -1,6 +1,21 @@
+const sidebar = {
+  blogProcess : [
+    {
+      title: 'VuePress 搭建过程',
+      collapsable: false,
+      children: [
+        {
+          text: 'VuePress快速搭建',
+          link: '/blogProcess/init.html'
+        }
+      ]
+    }
+  ]
+}
+
 module.exports = {
   lang: 'zh-CN',
-  title: 'SZY blog',
+  title: 'szy\'s blog',
   description: 'a blog manage by a lazy person',
   base: '/vuepress-blog/',
   head: [['link', { rel: 'icon', href: 'iconStar.png' }]],
@@ -11,13 +26,21 @@ module.exports = {
     navbar: [
       {
         text: '前端',
-        link: '/frontend',
+        link: '/frontend/',
       },
       {
         text: '日常',
-        link: '/daily',
+        link: '/daily/',
+      },
+      {
+        text: 'vuepress',
+        link: '/blogProcess/',
       },
     ],
+    sidebar: {
+      collapsable: false,
+      '/blogProcess/': sidebar.blogProcess,
+    },
   },
   plugins: [
     [
