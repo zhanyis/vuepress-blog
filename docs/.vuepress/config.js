@@ -13,6 +13,8 @@ const sidebar = {
   ]
 }
 
+const { path } = require('@vuepress/utils')
+
 module.exports = {
   lang: 'zh-CN',
   title: 'szy\'s blog',
@@ -20,6 +22,7 @@ module.exports = {
   base: '/vuepress-blog/',
   head: [['link', { rel: 'icon', href: 'iconStar.png' }]],
 
+  theme: path.resolve(__dirname, './theme/index.js'),
   themeConfig: {
     repo: 'https://github.com/zhanyis/vuepress-blog',
     editLink: false,
@@ -49,5 +52,6 @@ module.exports = {
         id: 'G-HCDF3J2F1X',
       },
     ],
+    require('./plugins/createHomePage.js'),
   ],
 }
