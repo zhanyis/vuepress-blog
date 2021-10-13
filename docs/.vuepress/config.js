@@ -1,15 +1,18 @@
 const sidebar = {
-  blogProcess : [
+  others : [
     {
-      title: 'VuePress 搭建过程',
-      collapsable: false,
+      text: 'VuePress',
       children: [
+        // SidebarItem
         {
           text: 'VuePress快速搭建',
-          link: '/blogProcess/init.html'
-        }
-      ]
-    }
+          link: '/others/vuepress/init.html',
+          children: [],
+        },
+        // 字符串 - 页面文件路径
+        // '/foo/bar.md',
+      ],
+    },
   ]
 }
 
@@ -32,17 +35,28 @@ module.exports = {
         link: '/frontend/',
       },
       {
+        text: '前端框架',
+        link: '/framework/',
+      },
+      {
+        text: '后端',
+        link: '/backend/',
+      },
+      {
+        text: '计算机基础',
+        link: '/basics/',
+      },
+      {
+        text: '其他',
+        link: '/others/',
+      },
+      {
         text: '日常',
         link: '/daily/',
       },
-      {
-        text: 'vuepress',
-        link: '/blogProcess/',
-      },
     ],
     sidebar: {
-      collapsable: false,
-      '/blogProcess/': sidebar.blogProcess,
+      '/others/': sidebar.others,
     },
   },
   plugins: [

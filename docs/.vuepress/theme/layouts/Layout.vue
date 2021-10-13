@@ -1,7 +1,6 @@
 <template>
   <Layout>
     <template #page-bottom>
-      <div class="my-footer">This is my custom page footer</div>
     </template>
   </Layout>
 </template>
