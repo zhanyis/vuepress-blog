@@ -6,7 +6,7 @@ const sidebar = {
         // SidebarItem
         {
           text: 'VuePress快速搭建',
-          link: '/others/vuepress/init.html',
+          link: '/others/vuepress/init.md',
           children: [],
         },
         // 字符串 - 页面文件路径
@@ -28,11 +28,21 @@ module.exports = {
   theme: path.resolve(__dirname, './theme/index.js'),
   themeConfig: {
     repo: 'https://github.com/zhanyis/vuepress-blog',
-    editLink: false,
+    docsDir: 'docs',
     navbar: [
       {
         text: '前端',
         link: '/frontend/',
+        children: [
+          {
+            text: 'HTML',
+            link: '/frontend/html/html.md'
+          },
+          {
+            text: 'CSS',
+            link: '/frontend/css'
+          }
+        ]
       },
       {
         text: '前端框架',
@@ -48,7 +58,7 @@ module.exports = {
       },
       {
         text: '其他',
-        link: '/others/',
+        link: '/others/vuepress/init.md',
       },
       {
         text: '日常',
@@ -60,12 +70,6 @@ module.exports = {
     },
   },
   plugins: [
-    [
-      '@vuepress/plugin-google-analytics',
-      {
-        id: 'G-HCDF3J2F1X',
-      },
-    ],
     require('./plugins/createHomePage.js'),
   ],
 }
